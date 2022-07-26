@@ -5,10 +5,11 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Controls.Primitives;
 
-namespace Sist_Controle.Business.Utils
+namespace Sistema.Utils
 {
     public static class AutoCompleteBoxUserControl
     {
+        #region 1- Class
         public class autoComplete
         {
             public string Nome { get; set; }
@@ -26,7 +27,9 @@ namespace Sist_Controle.Business.Utils
 
             public string fullname => Id + " - " + Nome;
         }
+        #endregion
 
+        #region 2- Métodos
         public static void OpenSuggestionBox(Popup nomePoput, ListBox nomeLista)
         {
             try
@@ -37,7 +40,7 @@ namespace Sist_Controle.Business.Utils
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                NewMessageBox.AbreWpf("" + ex.Message + " Error", 2);
             }
         }
 
@@ -51,7 +54,7 @@ namespace Sist_Controle.Business.Utils
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                NewMessageBox.AbreWpf("" + ex.Message + " Error", 2);
             }
         }
 
@@ -83,8 +86,7 @@ namespace Sist_Controle.Business.Utils
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
-                Console.Write(ex);
+                NewMessageBox.AbreWpf("" + ex.Message + " Error", 2);
             }
         }
 
@@ -104,9 +106,9 @@ namespace Sist_Controle.Business.Utils
             catch (Exception ex)
             {
                 // Info.  
-                MessageBox.Show(ex.Message, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
-                Console.Write(ex);
+                NewMessageBox.AbreWpf("" + ex.Message + " Error", 2);
             }
         }
+        #endregion
     }
 }
